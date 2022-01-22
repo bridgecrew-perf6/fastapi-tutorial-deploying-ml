@@ -4,7 +4,7 @@ RUN pip install --upgrade pip
 WORKDIR /app
 
 # bundle api source to app
-COPY ../ /app
+COPY . /app
 ENV PYTHONPATH=/app
 
 # install dependencies
