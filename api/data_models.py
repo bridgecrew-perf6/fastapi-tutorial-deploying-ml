@@ -18,15 +18,17 @@ class UserRequestIn(BaseModel):
     text: str
     model_language: ModelLanguage = 'en'
     model_size: ModelSize = 'sm'
+    selected_entities: List[str]
 
 
 class EntityOut(BaseModel):
-    start: int
-    end: int
-    type: str
     text: str
+    anonymized_text: str = ''
+    common_name: str = ''
+    entity_type: str
+    start_idx:  int
 
 
 class EntitiesOut(BaseModel):
-    entities: List[EntityOut]
+    tokens: List[EntityOut]
     anonymized_text: str
